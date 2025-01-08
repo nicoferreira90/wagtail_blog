@@ -4,6 +4,12 @@
 
 {% block content %}
 
-{{page.subtitle}}
+<div>
+    {{page.subtitle}}
+</div>
+
+{% for block in page.body %}
+    {% include_block block %}
+{% endfor %}
 
 {% endblock content %}

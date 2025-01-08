@@ -3,6 +3,9 @@ from django.db import models
 from wagtail.models import Page
 
 from wagtail.admin.panels import FieldPanel
+from wagtail.fields import StreamField
+
+from streams.blocks import TitleAndTextBlock
 
 
 class FlexPage(Page):
@@ -10,15 +13,20 @@ class FlexPage(Page):
 
     template = "flex/flex_page.html"
 
-    # todo
-    # content = StreamField()
+    body = StreamField(
+        [
+            ("title_and_text", TitleAndTextBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
 
     subtitle = models.CharField(max_length=100, null=True, blank=True)
 
     content_panels = Page.content_panels + [
         # todo
-        # StreamFieldPanel("content"),
         FieldPanel("subtitle"),
+        FieldPanel("body"),
     ]
 
     class Meta:
