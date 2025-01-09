@@ -10,3 +10,19 @@ class TitleAndTextBlock(blocks.StructBlock):
         template = "streams/title_and_text_block.html"
         icon = "edit"
         label = "Title and Text"
+
+
+class RichTextBlock(blocks.RichTextBlock):
+
+    class Meta:
+        template = "streams/rich_text_block.html"
+        icon = "edit"
+        label = "Full RichText"
+
+
+class SimpleRichTextBlock(blocks.RichTextBlock):
+
+    class Meta:
+        template = "streams/rich_text_block.html"
+        icon = "edit"
+        label = "Full RichText"
