@@ -5,7 +5,7 @@ from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 
-from streams.blocks import TitleAndTextBlock, RichTextBlock
+from streams.blocks import TitleAndTextBlock, RichTextBlock, CardBlock, CTABlock
 
 
 class FlexPage(Page):
@@ -17,6 +17,8 @@ class FlexPage(Page):
         [
             ("title_and_text", TitleAndTextBlock()),
             ("full_richtext", RichTextBlock()),
+            ("cards", CardBlock()),
+            ("cta", CTABlock()),
         ],
         null=True,
         blank=True,

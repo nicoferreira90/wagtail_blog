@@ -17,4 +17,8 @@
 
 {% image page.banner_image scale-60 %}
 
+{% for block in page.body %}
+    {% include_block block %}
+{% endfor %}
+
 {% endblock content %}
