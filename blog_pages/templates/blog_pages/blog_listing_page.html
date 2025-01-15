@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<div>
+    {{page.custom_title}}
+</div>
+
+{% for block in page.body %}
+    {% include_block block %}
+{% endfor %}
+
+{% endblock content %}

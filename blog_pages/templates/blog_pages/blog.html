@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<div>
+    {{page.custom_title}}
+</div>
+
+{% image page.blog_banner_image max-300x200 sizes="(max-width: 600px) max-150x100" %}
+
+{% for block in page.body %}
+    {% include_block block %}
+{% endfor %}
+
+{% endblock content %}
