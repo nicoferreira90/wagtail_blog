@@ -9,8 +9,13 @@
     {{page.custom_title}}
 </div>
 
-{% for block in page.body %}
-    {% include_block block %}
+<br>
+
+{% for post in posts %}
+    <a href="{{post.url}}">{{post.title}}</a>
+    {% image post.blog_banner_image fill-200x200 %}
+    <hr>
+
 {% endfor %}
 
 {% endblock content %}
